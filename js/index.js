@@ -10,6 +10,12 @@ function initMap() {
             stylers: [
                 {visibility: "off"}
             ]
+        },
+        {
+            featureType: "road",
+            stylers: [
+                {visibility: "off"}
+            ]
         }
     ];
     const map = new google.maps.Map(document.getElementById("map"), {
