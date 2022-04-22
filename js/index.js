@@ -1,3 +1,5 @@
+import { countries } from './countries.js';
+
 function initMap() {
     const startLocation = {
         lat: 39.381266,
@@ -26,3 +28,5 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+console.log(countries)
