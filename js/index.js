@@ -25,8 +25,20 @@ function initMap() {
         center: startLocation,
         styles: styles
     });
+
+    const coordinates = countries.features[0].geometry.coordinates;
+    console.log("coordinates", coordinates)
+    const border = coordinates.map(coords => coords.map(coordinatesToLatLng));
+    console.log("border", border)
+}
+
+function coordinatesToLatLng(coordinates) {
+    return coordinates.map(([lat, lng]) => ({
+        lat,
+        lng
+    }));
 }
 
 window.initMap = initMap;
 
-console.log(countries)
+console.log("countries", countries)
