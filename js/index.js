@@ -28,20 +28,26 @@ function initMap() {
 
     const coordinates = countries.features[107].geometry.coordinates;
     console.log("coordinates", coordinates)
-    const border = coordinates.map(coords => coords.map(coordinatesToLatLng));
-    console.log("border", border)
-    const polygon = new google.maps.Polygon({
-        paths: border[6],
-        strokeColor: "#FF0000",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: "#FF0000",
-        fillOpacity: 0.35,
-    });
-    const center = border[6][0][0];
+    const borders = coordinates.map(coords => coords.map(coordinatesToLatLng));
+    console.log("border", borders)
+    drawPolygons(map, borders);
+    const center = borders[6][0][0];
     console.log("center", center)
     map.setCenter(center)
-    polygon.setMap(map);
+}
+
+function drawPolygons(map, borders) {
+    borders.forEach(border => {
+        const polygon = new google.maps.Polygon({
+            paths: border,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35,
+        });
+        polygon.setMap(map);
+    });
 }
 
 function coordinatesToLatLng(coordinates) {
