@@ -23,9 +23,10 @@ function initMap() {
         }
     ];
     map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 5,
         center: startLocation,
-        styles: styles
+        disableDefaultUI: true,
+        styles: styles,
+        zoom: 5,
     });
     drawCountry(0);
 }
