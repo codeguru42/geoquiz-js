@@ -23,10 +23,10 @@ function initMap() {
         }
     ];
     map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 5,
         center: startLocation,
         disableDefaultUI: true,
-        styles: styles
+        styles: styles,
+        zoom: 5,
     });
     drawCountry(0);
 }
