@@ -1,5 +1,7 @@
 import { drawCountry } from './events.js';
 
+let map;
+
 function initMap() {
     const startLocation = {
         lat: 39.381266,
@@ -20,12 +22,14 @@ function initMap() {
             ]
         }
     ];
-    const map = new google.maps.Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map"), {
         zoom: 5,
         center: startLocation,
         styles: styles
     });
-    drawCountry(map, 0);
+    drawCountry(0);
 }
 
 window.initMap = initMap;
+
+export { map };
