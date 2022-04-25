@@ -4,6 +4,8 @@ import { map } from './index.js';
 let currCountryIndex = 0;
 let polygons = [];
 
+shuffleArray(countries.features);
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
