@@ -46,8 +46,28 @@ function nextCountry() {
     drawCountry(currCountryIndex);
 }
 
-document.getElementById("next-country")
+function checkAnswer() {
+    const answer = document.getElementById("country").value;
+
+    if (answer.toLowerCase() === countries.features[currCountryIndex].properties.ADMIN.toLowerCase()) {
+        alert("You got it right!");
+    } else {
+        alert("Try again");
+    }
+}
+
+function onKeyUp(event) {
+    if (event.code === "Enter") {
+        document.getElementById('check-answer').click();
+    }
+}
+
+document.getElementById('next-country')
     .addEventListener('click', nextCountry);
+document.getElementById('check-answer')
+    .addEventListener('click', checkAnswer);
+document.getElementById('country')
+    .addEventListener('keyup', onKeyUp)
 document.addEventListener('load', () => {
     console.log('load');
     drawCountry(currCountryIndex);
