@@ -56,9 +56,9 @@ function checkAnswer() {
     }
 }
 
-document.getElementById("next-country")
+document.getElementById('next-country')
     .addEventListener('click', nextCountry);
-document.getElementById("check-answer")
+document.getElementById('check-answer')
     .addEventListener('click', checkAnswer);
 document.addEventListener('load', () => {
     console.log('load');
