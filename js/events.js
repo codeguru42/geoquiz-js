@@ -21,8 +21,17 @@ function drawCountry(countryIndex) {
     const coordinates = country.geometry.coordinates;
     const borders = coordinates.map(coords => coords.map(coordinatesToLatLng));
     drawPolygons(map, borders);
-    const center = borders[0][0][0];
-    map.setCenter(center)
+    centerCountry(borders);
+}
+
+function centerCountry(borders) {
+    const bounds = new google.maps.LatLngBounds();
+    borders.forEach(border =>
+        border.forEach(points =>
+            points.forEach(point => bounds.extend(point))
+        )
+    );
+    map.fitBounds(bounds);
 }
 
 function drawPolygons(map, borders) {
