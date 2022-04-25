@@ -49,7 +49,7 @@ function nextCountry() {
 function checkAnswer() {
     const answer = document.getElementById("country").value;
 
-    if (answer === countries.features[currCountryIndex].properties.ADMIN) {
+    if (answer.toLowerCase() === countries.features[currCountryIndex].properties.ADMIN.toLowerCase()) {
         alert("You got it right!");
     } else {
         alert("Try again");
