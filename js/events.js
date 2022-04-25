@@ -32,6 +32,7 @@ function centerCountry(borders) {
         )
     );
     map.fitBounds(bounds);
+    map.setZoom(.8 * map.getZoom())
 }
 
 function drawPolygons(map, borders) {
