@@ -46,8 +46,20 @@ function nextCountry() {
     drawCountry(currCountryIndex);
 }
 
+function checkAnswer() {
+    const answer = document.getElementById("country").value;
+
+    if (answer === countries.features[currCountryIndex].properties.ADMIN) {
+        alert("You got it right!");
+    } else {
+        alert("Try again");
+    }
+}
+
 document.getElementById("next-country")
     .addEventListener('click', nextCountry);
+document.getElementById("check-answer")
+    .addEventListener('click', checkAnswer);
 document.addEventListener('load', () => {
     console.log('load');
     drawCountry(currCountryIndex);
