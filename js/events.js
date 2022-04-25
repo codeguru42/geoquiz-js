@@ -56,10 +56,18 @@ function checkAnswer() {
     }
 }
 
+function onKeyUp(event) {
+    if (event.code === "Enter") {
+        document.getElementById('check-answer').click();
+    }
+}
+
 document.getElementById('next-country')
     .addEventListener('click', nextCountry);
 document.getElementById('check-answer')
     .addEventListener('click', checkAnswer);
+document.getElementById('country')
+    .addEventListener('keyup', onKeyUp)
 document.addEventListener('load', () => {
     console.log('load');
     drawCountry(currCountryIndex);
