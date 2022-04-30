@@ -2,20 +2,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Geo Quiz</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://polyfill.io/v3/polyfill.min.js?features=default"
+    ></script>
+
+    <link
+        href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet"
+        type="text/css"
+    />
+    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
 
     <link href="./css/style.css" rel="stylesheet" type="text/css"/>
     <script src="./js/index.js" type="module"></script>
     <script defer src="./js/events.js" type="module"></script>
 </head>
 <body>
-<h3>Geo Quiz</h3>
-<label>
-    What country is this?
+<div class="mui-appbar">
+    <h1>Geo Quiz</h1>
+</div>
+<div class="mui-textfield mui-textfield--float-label">
     <input id="country" type="text"/>
-</label>
-<button id="check-answer">Check Answer</button>
-<button id="next-country">Next Country</button>
+    <label for="country">What country is this?</label>
+</div>
+<button class="mui-btn mui-btn--primary" id="check-answer">
+    Check Answer
+</button>
+<button class="mui-btn mui-btn--accent" id="next-country">Next Country</button>
 <div id="map"></div>
 
 <script
