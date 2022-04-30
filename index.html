@@ -18,12 +18,14 @@
 </head>
 <body>
 <h3>Geo Quiz</h3>
-<label>
-    What country is this?
+<div class="mui-textfield mui-textfield--float-label">
     <input id="country" type="text"/>
-</label>
-<button id="check-answer">Check Answer</button>
-<button id="next-country">Next Country</button>
+    <label for="country">What country is this?</label>
+</div>
+<button class="mui-btn mui-btn--primary" id="check-answer">
+    Check Answer
+</button>
+<button class="mui-btn mui-btn--accent" id="next-country">Next Country</button>
 <div id="map"></div>
 
 <script
