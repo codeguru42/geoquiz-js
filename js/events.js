@@ -62,6 +62,7 @@ function coordinatesToLatLng(coordinates) {
 }
 
 function nextCountry() {
+    clearInput();
     erasePolygons();
     currCountryIndex++;
     drawCountry(currCountryIndex);
@@ -75,6 +76,10 @@ function checkAnswer() {
     } else {
         alert("Try again");
     }
+}
+
+function clearInput() {
+    document.getElementById('country').value = '';
 }
 
 function onKeyUp(event) {
