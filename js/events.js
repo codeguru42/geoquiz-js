@@ -73,6 +73,7 @@ function checkAnswer() {
 
     if (answer.toLowerCase() === countries.features[currCountryIndex].properties.ADMIN.toLowerCase()) {
         alert("You got it right!");
+        nextCountry();
     } else {
         alert("Try again");
     }
