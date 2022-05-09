@@ -20,14 +20,20 @@
 <div class="mui-appbar">
     <h1>Geo Quiz</h1>
 </div>
-<div class="mui-textfield mui-textfield--float-label">
-    <input id="country" type="text"/>
-    <label for="country">What country is this?</label>
+<div class="mui-container">
+    <div class="mui-textfield mui-textfield--float-label">
+        <input id="country" type="text"/>
+        <label for="country">What country is this?</label>
+    </div>
+    <div>
+        <button class="mui-btn mui-btn--primary" id="check-answer">
+            Check Answer
+        </button>
+        <button class="mui-btn mui-btn--accent" id="next-country">
+            Next Country
+        </button>
+    </div>
 </div>
-<button class="mui-btn mui-btn--primary" id="check-answer">
-    Check Answer
-</button>
-<button class="mui-btn mui-btn--accent" id="next-country">Next Country</button>
 <div id="map"></div>
 
 <script
