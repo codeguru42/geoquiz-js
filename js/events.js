@@ -18,7 +18,6 @@ function shuffleArray(array) {
 
 function drawCountry(countryIndex) {
     const country = countries.features[countryIndex];
-    console.log("Country Name", country.properties.ADMIN)
     const coordinates = country.geometry.coordinates;
     const borders = coordinates.map(coords => coords.map(coordinatesToLatLng));
     drawPolygons(map, borders);
@@ -105,7 +104,6 @@ document.getElementById('check-answer')
 document.getElementById('country')
     .addEventListener('keyup', onKeyUp)
 document.addEventListener('load', () => {
-    console.log('load');
     drawCountry(currCountryIndex);
 });
 
