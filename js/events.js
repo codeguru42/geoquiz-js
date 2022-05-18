@@ -79,10 +79,11 @@ function checkAnswer() {
         alert("You got it right!");
         nextCountry();
     } else {
-        alert("Try again");
         if (guessCount === 3) {
             alert(`The correct answer is ${countryName}`)
             nextCountry();
+        } else {
+            alert("Try again");
         }
     }
 }
