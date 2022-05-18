@@ -3,6 +3,7 @@ import { map } from './index.js';
 
 let currCountryIndex = 0;
 let polygons = [];
+let guessCount = 0;
 
 shuffleArray(countries.features);
 
@@ -17,7 +18,6 @@ function shuffleArray(array) {
 
 function drawCountry(countryIndex) {
     const country = countries.features[countryIndex];
-    console.log("Country Name", country.properties.ADMIN)
     const coordinates = country.geometry.coordinates;
     const borders = coordinates.map(coords => coords.map(coordinatesToLatLng));
     drawPolygons(map, borders);
@@ -62,6 +62,7 @@ function coordinatesToLatLng(coordinates) {
 }
 
 function nextCountry() {
+    guessCount = 0;
     clearInput();
     erasePolygons();
     currCountryIndex++;
@@ -70,12 +71,19 @@ function nextCountry() {
 
 function checkAnswer() {
     const answer = document.getElementById("country").value;
+    guessCount++;
 
-    if (answer.toLowerCase() === countries.features[currCountryIndex].properties.ADMIN.toLowerCase()) {
+    const countryName = countries.features[currCountryIndex].properties.ADMIN;
+    if (answer.toLowerCase() === countryName.toLowerCase()) {
         alert("You got it right!");
         nextCountry();
     } else {
-        alert("Try again");
+        if (guessCount === 3) {
+            alert(`The correct answer is ${countryName}`)
+            nextCountry();
+        } else {
+            alert("Try again");
+        }
     }
 }
 
@@ -96,7 +104,6 @@ document.getElementById('check-answer')
 document.getElementById('country')
     .addEventListener('keyup', onKeyUp)
 document.addEventListener('load', () => {
-    console.log('load');
     drawCountry(currCountryIndex);
 });
 
