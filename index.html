@@ -7,29 +7,31 @@
     ></script>
 
     <link
-        href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet"
-        type="text/css"
-    />
-    <script src="//cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        rel="stylesheet"
+    >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <link href="./css/style.css" rel="stylesheet" type="text/css"/>
     <script src="./js/index.js" type="module"></script>
     <script defer src="./js/events.js" type="module"></script>
 </head>
 <body>
-<div class="mui-appbar">
-    <h1>Geo Quiz</h1>
-</div>
-<div class="mui-container">
-    <div class="mui-textfield mui-textfield--float-label">
+<nav class="nav-extended">
+    <div class="nav-wrapper center-align">
+        <span class="nav-title">Geo Quiz</span>
+    </div>
+</nav>
+<div class="container">
+    <div class="input-field">
         <input id="country" type="text"/>
         <label for="country">What country is this?</label>
     </div>
     <div>
-        <button class="mui-btn mui-btn--primary" id="check-answer">
+        <button class="waves-effect waves-light btn" id="check-answer">
             Check Answer
         </button>
-        <button class="mui-btn mui-btn--accent" id="next-country">
+        <button class="waves-effect waves-light btn" id="next-country">
             Next Country
         </button>
     </div>
